@@ -1,17 +1,17 @@
 package com.example.vitalReports.service;
 
-import com.example.vitalReports.logic.VitalDecisionEngine;
 import org.springframework.stereotype.Service;
 
 import com.example.vitalReports.domain.model.VitalReading;
 import com.example.vitalReports.domain.model.VitalStatus;
-import com.example.vitalReports.logic.VitalStatusEvaluator;
+import com.example.vitalReports.logic.VitalDecisionEngine;
 
 @Service
 public class VitalProcessingService {
 
     private final VitalDecisionEngine decisionEngine;
 
+    // Spring will inject RuleBasedVitalEvaluator (because @Primary)
     public VitalProcessingService(VitalDecisionEngine decisionEngine) {
         this.decisionEngine = decisionEngine;
     }

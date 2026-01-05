@@ -8,17 +8,17 @@ import com.example.vitalReports.service.VitalProcessingService;
 
 @RestController
 @RequestMapping("/api/vitals")
-@CrossOrigin
+@CrossOrigin // allow frontend / other services
 public class VitalController {
 
-    private final VitalProcessingService service;
+    private final VitalProcessingService processingService;
 
-    public VitalController(VitalProcessingService service) {
-        this.service = service;
+    public VitalController(VitalProcessingService processingService) {
+        this.processingService = processingService;
     }
 
-    @PostMapping("/analyze")
-    public VitalStatus analyze(@RequestBody VitalReading reading) {
-        return service.process(reading);
+    @PostMapping("/evaluate")
+    public VitalStatus evaluateVitals(@RequestBody VitalReading reading) {
+        return processingService.process(reading);
     }
 }
