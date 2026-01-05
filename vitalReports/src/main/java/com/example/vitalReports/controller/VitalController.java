@@ -1,14 +1,15 @@
 package com.example.vitalReports.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.vitalReports.domain.model.VitalAssessment;
 import com.example.vitalReports.domain.model.VitalReading;
-import com.example.vitalReports.domain.model.VitalStatus;
 import com.example.vitalReports.service.VitalProcessingService;
 
 @RestController
 @RequestMapping("/api/vitals")
-@CrossOrigin // allow frontend / other services
+@CrossOrigin
 public class VitalController {
 
     private final VitalProcessingService processingService;
@@ -18,7 +19,9 @@ public class VitalController {
     }
 
     @PostMapping("/evaluate")
-    public VitalStatus evaluateVitals(@RequestBody VitalReading reading) {
+    public VitalAssessment evaluateVitals(
+            @Valid @RequestBody VitalReading reading
+    ) {
         return processingService.process(reading);
     }
 }

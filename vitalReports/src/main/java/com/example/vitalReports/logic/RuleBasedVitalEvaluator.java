@@ -3,9 +3,9 @@ package com.example.vitalReports.logic;
 import com.example.vitalReports.domain.enums.HealthStatus;
 import com.example.vitalReports.domain.model.VitalReading;
 import com.example.vitalReports.domain.model.VitalStatus;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
-@Primary
+
+
 @Component
 public class RuleBasedVitalEvaluator implements VitalDecisionEngine {
 
@@ -35,8 +35,8 @@ public class RuleBasedVitalEvaluator implements VitalDecisionEngine {
 
     private HealthStatus heartRate(int hr) {
         if (hr >= 60 && hr <= 100) return HealthStatus.GOOD;
-        if ((hr >= 50 && hr <= 59) || (hr <= 110)) return HealthStatus.AVERAGE;
-        if ((hr >= 40 && hr <= 49) || (hr <= 130)) return HealthStatus.BAD;
+        if (hr <= 110) return HealthStatus.AVERAGE;
+        if (hr <= 130) return HealthStatus.BAD;
         return HealthStatus.CRITICAL;
     }
 
