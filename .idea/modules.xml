@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/vitalReports.iml" filepath="$PROJECT_DIR$/.idea/vitalReports.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vitalReports/vitalReports.iml" filepath="$PROJECT_DIR$/vitalReports/vitalReports.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/vitalReports-AI.iml" filepath="$PROJECT_DIR$/.idea/vitalReports-AI.iml" />
     </modules>
   </component>
 </project>
