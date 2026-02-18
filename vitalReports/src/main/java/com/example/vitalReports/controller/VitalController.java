@@ -8,7 +8,7 @@ import com.example.vitalReports.domain.model.VitalReading;
 import com.example.vitalReports.service.VitalProcessingService;
 
 @RestController
-@RequestMapping("/api/vitals")
+@RequestMapping("/api/vital/vitals")
 @CrossOrigin
 public class VitalController {
 
