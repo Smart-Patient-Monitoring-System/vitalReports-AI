@@ -13,7 +13,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/vital/ecg")
-@CrossOrigin
 public class ECGController {
 
     private final ECGPredictionService ecgPredictionService;
